@@ -6,7 +6,10 @@ import {
   AxiosRequestConfig,
   AxiosResponse
 } from 'axios';
-import { EnhancedStore } from '@reduxjs/toolkit';
+import { EnhancedStore, ThunkDispatch } from '@reduxjs/toolkit';
+import { updateSession, signOut } from 'state/actions/userActions';
+import { sessionState } from 'state/reducers/sessionReducer';
+import { AnyAction } from 'redux';
 
 const ACCESS_TOKEN = 'access-token';
 const UID = 'UID';
@@ -41,9 +44,9 @@ export default (store: EnhancedStore, client: AxiosInstance) => {
           uid: headers[UID],
           client: headers[CLIENT]
         };
-        // TODO: Update session stored in redux
-        // eslint-disable-next-line no-console
-        console.log(session);
+        (store.dispatch as ThunkDispatch<sessionState, unknown, AnyAction>)(
+          updateSession(session)
+        );
       }
       response.data = humps.camelizeKeys(data);
       return response;
@@ -52,7 +55,9 @@ export default (store: EnhancedStore, client: AxiosInstance) => {
       if (error.response && error.response.status === UNAUTHORIZED) {
         // eslint-disable-next-line no-console
         console.log(`Error: ${error.response}`);
-        // TODO: Remove all user data from redux (logout)
+        (store.dispatch as ThunkDispatch<sessionState, unknown, AnyAction>)(
+          signOut()
+        );
       }
       return Promise.reject(error);
     }
