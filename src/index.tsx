@@ -5,13 +5,15 @@ import App from 'components/App';
 
 import './index.css';
 
-import configureStore from 'state/store/configureStore.dev';
 import { Provider } from 'react-redux';
+import configureStore from 'state/store/configureStore.dev';
 
 import httpClient from 'httpClient';
 
 import { PersistGate } from 'redux-persist/integration/react';
+
 import applyDefaultInterceptors from 'httpClient/applyDefaultInterceptors';
+
 import reportWebVitals from './reportWebVitals';
 
 const container = document.getElementById('root')!;

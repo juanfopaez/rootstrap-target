@@ -14,6 +14,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import reducer from 'state/reducers';
 
+// eslint-disable-next-line no-unused-vars
 export default (initialState: any, _?: boolean) => {
   const logger = createLogger({
     collapsed: true,
