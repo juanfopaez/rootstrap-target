@@ -1,5 +1,5 @@
 import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
-import { infoType } from 'constants/types';
+import { infoType } from 'types/sessionTypes';
 import userService from 'services/userService';
 
 import parseError from 'utils/parseError';

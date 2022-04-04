@@ -10,7 +10,7 @@ import { EnhancedStore, ThunkDispatch } from '@reduxjs/toolkit';
 import { updateSession, signOut } from 'state/actions/userActions';
 
 import { AnyAction } from 'redux';
-import { sessionState } from 'constants/types';
+import { sessionState } from 'types/sessionTypes';
 
 const ACCESS_TOKEN = 'access-token';
 const UID = 'UID';

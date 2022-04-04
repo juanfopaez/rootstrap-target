@@ -1,6 +1,6 @@
 import { useSelector, shallowEqual } from 'react-redux';
 
-import { sessionState } from 'constants/types';
+import { sessionState } from 'types/sessionTypes';
 
 const useSession = () =>
   useSelector(
