@@ -8,8 +8,9 @@ import {
 } from 'axios';
 import { EnhancedStore, ThunkDispatch } from '@reduxjs/toolkit';
 import { updateSession, signOut } from 'state/actions/userActions';
-import { sessionState } from 'state/reducers/sessionReducer';
+
 import { AnyAction } from 'redux';
+import { sessionState } from 'constants/types';
 
 const ACCESS_TOKEN = 'access-token';
 const UID = 'UID';

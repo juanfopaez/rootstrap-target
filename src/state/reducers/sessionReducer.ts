@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { sessionState } from 'constants/types';
 import {
   signInFulfilled,
   signUpFulfilled,
@@ -6,25 +7,16 @@ import {
   updateSession
 } from 'state/actions/userActions';
 
-export interface infoType {
-  token?: string;
-  uid?: string;
-  client?: string;
-}
-
-export interface sessionState {
-  authenticated: boolean;
-  user: null;
-  info: infoType;
-}
-
-const initialState = {
+const initialState: sessionState = {
   authenticated: false,
   user: null,
   info: {
-    token: ''
+    token: '',
+    uid: '',
+    client: ''
   }
 };
+
 const fulfilledReducer = (state: sessionState, { payload }: any) => {
   state.user = payload;
 };
