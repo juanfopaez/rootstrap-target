@@ -6,7 +6,7 @@ import App from 'components/App';
 import './index.css';
 
 import { Provider } from 'react-redux';
-import configureStore from 'state/store/configureStore.dev';
+import configureStore from 'state/store/configureStore';
 
 import httpClient from 'httpClient';
 
@@ -20,7 +20,7 @@ const container = document.getElementById('root')!;
 
 const root = ReactDOMClient.createRoot(container);
 
-const { persistor, store } = configureStore({});
+const { persistor, store } = configureStore();
 
 applyDefaultInterceptors(store, httpClient);
 

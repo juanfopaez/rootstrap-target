@@ -1,7 +1,7 @@
 const routes = {
   index: '/',
   login: '/login',
-  register: '/resgister'
+  register: '/register'
 };
 
 export default routes;

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
+import { infoType } from 'types/sessionTypes';
 import userService from 'services/userService';
-import { infoType } from 'state/reducers/sessionReducer';
+
 import parseError from 'utils/parseError';
 
 export const signIn = createAsyncThunk('user/login', async (userInput) => {

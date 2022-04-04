@@ -11,6 +11,7 @@ function App() {
   const signOutRequest = useDispatch(signOut);
   const signUpRequest = useDispatch(signUp);
   const signInRequest = useDispatch(signIn);
+
   return (
     <div className="App">
       <button
@@ -35,7 +36,9 @@ function App() {
         type="button"
         disabled={authenticated}
         onClick={() => {
-          signInRequest({});
+          signInRequest({
+            user: { email: 'test@gmail.com', password: 'password' }
+          });
         }}
       >
         SignIn
