@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import { Redirect } from 'react-router-dom';
+
+import { Navigate } from 'react-router-dom';
 
 import useSession from 'hooks/useSession';
 
@@ -9,7 +10,7 @@ function Authentication() {
   const { authenticated } = useSession();
 
   if (authenticated) {
-    return <Redirect to={routes.index} />;
+    return <Navigate to={routes.index} />;
   }
 
   return <div>Authentication</div>;

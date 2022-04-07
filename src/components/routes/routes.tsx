@@ -6,23 +6,33 @@ import NotFound from 'pages/NotFound';
 
 import routesPaths from 'constants/routesPaths';
 
-const routes = {
+export interface routeType {
+  path?: string;
+  element: React.ReactElement;
+  private?: boolean;
+}
+
+export interface routeElementType {
+  [key: string]: routeType;
+}
+
+const routes: routeElementType = {
   index: {
     path: routesPaths.index,
-    component: <HomePage />,
-    exact: true,
+    element: <HomePage />,
     private: true
   },
   login: {
     path: routesPaths.login,
-    component: <Authentication />
+    element: <Authentication />
   },
   register: {
     path: routesPaths.register,
-    component: <Authentication />
+    element: <Authentication />
   },
   notFound: {
-    component: <NotFound />
+    path: '*',
+    element: <NotFound />
   }
 };
 

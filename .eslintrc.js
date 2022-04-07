@@ -31,6 +31,7 @@ module.exports = {
   rules: {
     // EsLint
     'no-param-reassign': [2, { props: false }],
+    'react/jsx-props-no-spreading': 'off',
     // Jest
     'jest/no-disabled-tests': 'warn',
     'jest/no-focused-tests': 'error',
