@@ -1,0 +1,17 @@
+@import '../Variables/Variables.module.scss';
+
+.wrapper { 
+    display: flex;
+    height: 100%;
+
+    div:nth-child(2) {
+        background-color: $turquiose;
+        @include respond-to('medium') {
+            display: none;
+        }
+    }
+
+    div:nth-child(-n + 2) {
+        width: 100%;
+    }
+}

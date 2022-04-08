@@ -4,6 +4,8 @@ import useSession from 'hooks/useSession';
 
 import { Route, Routes } from 'react-router-dom';
 
+import styles from 'styles/General.module.scss';
+
 import routes, { routeType } from './routes/routes';
 import PrivateRoute from './routes/PrivateRoute';
 
@@ -11,7 +13,7 @@ function App() {
   const { authenticated } = useSession();
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Routes>
         {Object.values(routes).map((route: routeType) =>
           route.private ? (

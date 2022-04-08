@@ -17,8 +17,7 @@ function Authentication() {
   return (
     <PageWrapper>
       <>
-        <div>Left part</div>
-        <div>Rigth part</div>
+        <div>TARGET MVD</div>
       </>
     </PageWrapper>
   );

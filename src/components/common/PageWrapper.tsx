@@ -1,11 +1,19 @@
+/* 
+  PageWrapper.tsx is a simple component that recieves 
+  2 divs in order to map other components using left or
+  right section :) 
+*/
+
 import React from 'react';
 
-import 'styles/components/PageWrapper.scss';
+import styles from 'styles/components/PageWrapper.module.scss';
 
 interface Props {
   children: React.ReactElement;
 }
+
 function PageWrapper({ children }: Props) {
-  return <div className="wrapper">{children}</div>;
+  return <div className={styles.wrapper}>{children}</div>;
 }
+
 export default PageWrapper;
