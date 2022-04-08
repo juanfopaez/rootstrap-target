@@ -2,7 +2,7 @@ import React from 'react';
 
 import useSession from 'hooks/useSession';
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import routes, { routeType } from './routes/routes';
 import PrivateRoute from './routes/PrivateRoute';
@@ -11,7 +11,7 @@ function App() {
   const { authenticated } = useSession();
 
   return (
-    <BrowserRouter>
+    <div className="app">
       <Routes>
         {Object.values(routes).map((route: routeType) =>
           route.private ? (
@@ -29,7 +29,7 @@ function App() {
           )
         )}
       </Routes>
-    </BrowserRouter>
+    </div>
   );
 }
 
