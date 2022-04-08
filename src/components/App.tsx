@@ -25,7 +25,7 @@ function App() {
               }
             />
           ) : (
-            <Route key={route.path} path={route.path} {...route} />
+            <Route key={route.path} {...route} />
           )
         )}
       </Routes>

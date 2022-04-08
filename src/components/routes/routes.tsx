@@ -7,7 +7,7 @@ import NotFound from 'pages/NotFound';
 import routesPaths from 'constants/routesPaths';
 
 export interface routeType {
-  path?: string;
+  path: string;
   element: React.ReactElement;
   private?: boolean;
 }
