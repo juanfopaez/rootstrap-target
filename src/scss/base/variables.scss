@@ -1,0 +1,11 @@
+$turquiose: #2FBCF7 !default;
+$white: #fff !default;
+
+$breakpoints: (
+  'small':  ( max-width:  600px ),
+  'medium': ( max-width:  768px ),
+  'large':  ( max-width: 992px ),
+  'extra-large': ( max-width: 1200px )
+) !default;
+
+$main-font: 'Open Sans';

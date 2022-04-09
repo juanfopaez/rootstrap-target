@@ -31,7 +31,9 @@ module.exports = {
   rules: {
     // EsLint
     'no-param-reassign': [2, { props: false }],
+    'jsx-a11y/label-has-associated-control': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'jsx-a11y/label-has-for': 'off',
     'react/function-component-definition': [
       2,
       {

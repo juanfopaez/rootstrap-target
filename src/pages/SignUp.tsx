@@ -6,6 +6,7 @@ import useSession from 'hooks/useSession';
 
 import routes from 'components/routes/routes';
 import PageWrapper from 'components/common/PageWrapper';
+import InfoSection from 'components/common/InfoSection';
 
 const SignUp = () => {
   const { authenticated } = useSession();
@@ -18,6 +19,9 @@ const SignUp = () => {
     <PageWrapper>
       <>
         <div>TARGET MVD SignUp</div>
+        <div>
+          <InfoSection />
+        </div>
       </>
     </PageWrapper>
   );

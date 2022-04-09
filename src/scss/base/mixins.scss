@@ -1,12 +1,4 @@
-$turquiose: #2FBCF7 !default;
-$white: #fff !default;
-
-$breakpoints: (
-  'small':  ( max-width:  600px ),
-  'medium': ( max-width:  768px ),
-  'large':  ( max-width: 992px ),
-  'extra-large': ( max-width: 1200px )
-) !default;
+@import './variables.scss'; 
 
 @mixin respond-to($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
@@ -19,4 +11,4 @@ $breakpoints: (
       @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
           + "Available breakpoints are: #{map-keys($breakpoints)}.";
     }
-  }
+}

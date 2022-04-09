@@ -1,10 +1,13 @@
-/* eslint-disable no-undef */
 import React from 'react';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  icon: string;
+  label: string;
 }
 
-const InputField: React.FC<InputProps> = ({ ...props }) => <input {...props} />;
-
+const InputField: React.FC<InputProps> = ({ label, ...props }) => (
+  <div>
+    <label>{label}</label>
+    <input {...props} />
+  </div>
+);
 export default InputField;

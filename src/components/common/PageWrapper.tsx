@@ -6,14 +6,12 @@
 
 import React from 'react';
 
-import styles from 'styles/components/common/PageWrapper.module.scss';
-
 interface Props {
   children: React.ReactElement;
 }
 
 const PageWrapper = ({ children }: Props) => (
-  <div className={styles.wrapper}>{children}</div>
+  <div className="wrapper">{children}</div>
 );
 
 export default PageWrapper;

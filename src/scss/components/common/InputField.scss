@@ -1,0 +1,12 @@
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    label {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 0.688rem;
+        margin: 0.25rem 0;
+        line-height: 13px;
+        letter-spacing: 1.65px;
+    }
+}
