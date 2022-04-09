@@ -1,10 +1,9 @@
 import React from 'react';
 
 import HomePage from 'pages/Home';
-import Authentication from 'pages/Authentication';
+import SignIn from 'pages/SignIn';
+import SignUp from 'pages/SignUp';
 import NotFound from 'pages/NotFound';
-
-import routesPaths from 'constants/routesPaths';
 
 export interface routeType {
   path: string;
@@ -18,17 +17,17 @@ export interface routeElementType {
 
 const routes: routeElementType = {
   index: {
-    path: routesPaths.index,
+    path: '/',
     element: <HomePage />,
     private: true
   },
-  login: {
-    path: routesPaths.login,
-    element: <Authentication />
+  signIn: {
+    path: '/login',
+    element: <SignIn />
   },
-  register: {
-    path: routesPaths.register,
-    element: <Authentication />
+  signUp: {
+    path: '/register',
+    element: <SignUp />
   },
   notFound: {
     path: '*',

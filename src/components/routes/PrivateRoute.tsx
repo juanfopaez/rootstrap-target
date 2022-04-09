@@ -1,10 +1,9 @@
 import React from 'react';
 
-import routes from 'constants/routesPaths';
-
 import { Navigate, useLocation } from 'react-router-dom';
 
 import { bool, node } from 'prop-types';
+import routes from './routes';
 
 function PrivateRoute({
   children,
@@ -19,7 +18,7 @@ function PrivateRoute({
   ) : (
     <Navigate
       to={{
-        pathname: routes.login
+        pathname: routes.signIn.path
       }}
       state={{ from: location }}
       replace

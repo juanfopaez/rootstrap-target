@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from 'tests/testingRender';
+import { render, screen } from 'utils/tests/testingRender';
 
 import PageWrapper from '../PageWrapper';
 

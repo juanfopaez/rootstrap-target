@@ -9,7 +9,7 @@ import styles from 'styles/General.module.scss';
 import routes, { routeType } from './routes/routes';
 import PrivateRoute from './routes/PrivateRoute';
 
-function App() {
+const App = () => {
   const { authenticated } = useSession();
 
   return (
@@ -33,6 +33,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;

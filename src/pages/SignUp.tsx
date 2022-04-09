@@ -7,7 +7,7 @@ import useSession from 'hooks/useSession';
 import routes from 'components/routes/routes';
 import PageWrapper from 'components/common/PageWrapper';
 
-function Authentication() {
+const SignUp = () => {
   const { authenticated } = useSession();
 
   if (authenticated) {
@@ -17,10 +17,10 @@ function Authentication() {
   return (
     <PageWrapper>
       <>
-        <div>TARGET MVD</div>
+        <div>TARGET MVD SignUp</div>
       </>
     </PageWrapper>
   );
-}
+};
 
-export default memo(Authentication);
+export default memo(SignUp);
