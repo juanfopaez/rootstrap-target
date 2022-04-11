@@ -20,10 +20,7 @@ export default createReducer({}, (builder) => {
     .addMatcher(
       ({ type }) => type.endsWith(`/${REJECTED}`),
       (state: any, { type, error }) => {
-        state[getActionKey(type)] = {
-          status: REJECTED,
-          error
-        };
+        state[getActionKey(type)] = { status: REJECTED, error: error.message };
       }
     )
     .addMatcher(

@@ -27,7 +27,7 @@
       box-sizing: border-box;
       outline: none;
       &.error {
-        border: 0.12rem solid $error;
+        border-color: $error;
       }
       &:focus {
         outline-style: none;
@@ -42,5 +42,6 @@
       letter-spacing: 0.095rem;
       color: $error;
       font-weight: 600;
+      min-height: 0.813rem;
     } 
 }

@@ -2,9 +2,12 @@ import React, { memo } from 'react';
 
 import { Navigate } from 'react-router-dom';
 
+import { useForm } from 'react-hook-form';
 import useSession from 'hooks/useSession';
+import useDispatch from 'hooks/useDispatch';
+import useStatus from 'hooks/useStatus';
 
-import Smilies from 'assets/images/smilies.svg';
+import { signIn } from 'state/actions/userActions';
 
 import routes from 'components/routes/routes';
 import PageWrapper from 'components/common/PageWrapper';
@@ -12,12 +15,30 @@ import InfoSection from 'components/common/InfoSection';
 import InputField from 'components/common/InputField';
 import BlackButton from 'components/common/BlackButton';
 
+import Smilies from 'assets/images/smilies.svg';
+
+import { PENDING } from 'constants/actionStatusConstants';
+
 const SignIn = () => {
   const { authenticated } = useSession();
+  const onSubmit = useDispatch(signIn);
+  const requestStatus = useStatus(signIn);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
+
+  const onSubmitForm = async (data: any) => {
+    await onSubmit({ user: data });
+  };
 
   if (authenticated) {
     return <Navigate to={routes.index.path} />;
   }
+
+  const isLoading = requestStatus.status === PENDING;
 
   return (
     <PageWrapper>
@@ -32,15 +53,32 @@ const SignIn = () => {
               Travel, Dating, Music, etc and start conecting with others who
               share your interest.
             </p>
-            <form>
-              <InputField id="email" label="Email" defaultValue="" />
+            <form onSubmit={handleSubmit(onSubmitForm)}>
               <InputField
-                id="password"
-                label="Password"
-                type="password"
-                defaultValue=""
+                label="email"
+                id="email"
+                register={register('email', {
+                  required: 'Your email is required',
+                  pattern: {
+                    value: /\S+@\S+\.\S+/,
+                    message: 'Entered value does not match email format'
+                  }
+                })}
+                error={errors.email ? errors.email.message : ''}
+                type="email"
               />
-              <BlackButton type="button">Sign in</BlackButton>
+              <InputField
+                label="password"
+                id="password"
+                register={register('password', {
+                  required: 'Your password is required'
+                })}
+                error={errors.password ? errors.password.message : ''}
+                type="password"
+              />
+              <BlackButton type="submit" disabled={isLoading}>
+                Sign in
+              </BlackButton>
             </form>
             <div className="signInWrapper__navigation">
               <a href="#">Forgot your password?</a>
