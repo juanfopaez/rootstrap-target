@@ -8,6 +8,7 @@ import routes from 'components/routes/routes';
 import PageWrapper from 'components/common/PageWrapper';
 import InfoSection from 'components/common/InfoSection';
 import InputField from 'components/common/InputField';
+import BlackButton from 'components/common/BlackButton';
 
 const SignIn = () => {
   const { authenticated } = useSession();
@@ -19,10 +20,21 @@ const SignIn = () => {
   return (
     <PageWrapper>
       <>
-        <div>
-          <InputField label="Name" value="red" />
+        <div className="wrapper__left">
+          <div>Target mvd</div>
+          <form>
+            <InputField id="email" label="Email" defaultValue="" />
+            <InputField
+              id="password"
+              label="Password"
+              type="password"
+              defaultValue=""
+              error="This is an error example fcdejoesijocfijoefijoesoijfsoij"
+            />
+            <BlackButton type="button">Sign in</BlackButton>
+          </form>
         </div>
-        <div>
+        <div className="wrapper__right">
           <InfoSection />
         </div>
       </>

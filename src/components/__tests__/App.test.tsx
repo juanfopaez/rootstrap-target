@@ -6,7 +6,7 @@ import App from '../App';
 describe('App.js Tets', () => {
   it('Render login page if user uses /login as path', () => {
     render(<App />, { route: '/login', initialState: {} });
-    const linkElement = screen.getByText(/SignIn Form/);
+    const linkElement = screen.getByText(/Target mvd/);
     expect(linkElement).toBeInTheDocument();
   });
 

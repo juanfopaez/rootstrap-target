@@ -5,13 +5,13 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { bool, node } from 'prop-types';
 import routes from './routes';
 
-function PrivateRoute({
+const PrivateRoute = ({
   children,
   authenticated
 }: {
   children: React.ReactElement;
   authenticated: boolean;
-}) {
+}) => {
   const location = useLocation();
   return authenticated ? (
     children
@@ -24,7 +24,7 @@ function PrivateRoute({
       replace
     />
   );
-}
+};
 
 PrivateRoute.propTypes = {
   children: node.isRequired,
