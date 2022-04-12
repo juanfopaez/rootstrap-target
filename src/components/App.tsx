@@ -19,10 +19,10 @@ const App = () => {
           route.private ? (
             <Route
               key={route.path}
-              path={route.path}
+              {...route}
               element={
                 <PrivateRoute authenticated={authenticated}>
-                  <Route {...route} />
+                  {route.element}
                 </PrivateRoute>
               }
             />
