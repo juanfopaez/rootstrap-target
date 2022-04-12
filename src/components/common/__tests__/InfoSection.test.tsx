@@ -3,7 +3,7 @@ import { render, screen } from 'utils/tests/testingRender';
 
 import InfoSection from '../InfoSection';
 
-describe('InfoSection.tsx Tets', () => {
+describe('InfoSection.tsx Tests', () => {
   it('Should render left and right section', () => {
     render(<InfoSection />);
     const playIcon = screen.getByAltText('Play Icon');

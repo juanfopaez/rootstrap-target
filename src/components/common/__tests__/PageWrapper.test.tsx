@@ -3,7 +3,7 @@ import { render, screen } from 'utils/tests/testingRender';
 
 import PageWrapper from '../PageWrapper';
 
-describe('PageWrapper.tsx Tets', () => {
+describe('PageWrapper.tsx Tests', () => {
   it('Should render left and right section', () => {
     render(
       <PageWrapper>

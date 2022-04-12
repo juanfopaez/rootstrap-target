@@ -3,7 +3,7 @@ import { render, screen } from 'utils/tests/testingRender';
 
 import InputField from '../InputField';
 
-describe('InputField.tsx Tets', () => {
+describe('InputField.tsx Tests', () => {
   it('Should render input field component', () => {
     render(
       <form>
