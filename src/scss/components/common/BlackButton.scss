@@ -19,4 +19,9 @@
     &:active {
         background-color: $selectBlack;
     }
+
+    &:disabled{
+        background-color: $focusedBlack;
+        cursor: not-allowed;
+    }
 }

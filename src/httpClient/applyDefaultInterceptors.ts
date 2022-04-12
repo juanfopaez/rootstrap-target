@@ -54,8 +54,6 @@ export default (store: EnhancedStore, client: AxiosInstance) => {
     },
     (error: AxiosError) => {
       if (error.response && error.response.status === UNAUTHORIZED) {
-        // eslint-disable-next-line no-console
-        console.log(`Error: ${error.response}`);
         (store.dispatch as ThunkDispatch<sessionState, unknown, AnyAction>)(
           signOut()
         );

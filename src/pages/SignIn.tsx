@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { Navigate } from 'react-router-dom';
 
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import useSession from 'hooks/useSession';
 import useDispatch from 'hooks/useDispatch';
 import useStatus from 'hooks/useStatus';
@@ -19,33 +19,47 @@ import Smilies from 'assets/images/smilies.svg';
 
 import { PENDING } from 'constants/actionStatusConstants';
 
+import { signInFields } from 'types/sessionTypes';
+
 const SignIn = () => {
   const { authenticated } = useSession();
   const onSubmit = useDispatch(signIn);
   const requestStatus = useStatus(signIn);
 
+  const { status, error } = requestStatus;
+
   const {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm();
+  } = useForm<signInFields>();
 
-  const onSubmitForm = async (data: any) => {
-    await onSubmit({ user: data });
+  const onSubmitForm: SubmitHandler<signInFields> = (data: signInFields) => {
+    onSubmit({ user: data });
   };
 
   if (authenticated) {
     return <Navigate to={routes.index.path} />;
   }
 
-  const isLoading = requestStatus.status === PENDING;
+  const isLoading = status === PENDING;
+
+  const extractEmailErrors = () => {
+    if (error) {
+      return error;
+    }
+    if (errors.email) {
+      return errors.email.message;
+    }
+    return '';
+  };
 
   return (
     <PageWrapper>
       <>
         <div className="wrapper__left">
           <div className="signInWrapper">
-            <img src={Smilies} alt="smilies" />
+            <img src={Smilies} alt="Target mvd logo" />
             <h2>Target mvd</h2>
             <h5>Find people near you & Connect</h5>
             <p>
@@ -64,7 +78,7 @@ const SignIn = () => {
                     message: 'Entered value does not match email format'
                   }
                 })}
-                error={errors.email ? errors.email.message : ''}
+                error={extractEmailErrors()}
                 type="email"
               />
               <InputField

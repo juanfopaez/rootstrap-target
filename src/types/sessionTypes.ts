@@ -28,3 +28,8 @@ export interface sessionState {
   user: userType;
   info: infoType;
 }
+
+export interface signInFields {
+  email: string;
+  password: string;
+}
