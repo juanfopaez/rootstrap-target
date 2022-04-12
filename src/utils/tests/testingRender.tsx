@@ -16,13 +16,11 @@ function render(ui: any, { route = '/', initialState = {} } = {}) {
     preloadedState: initialState
   });
 
-  function Wrapper({ children }: WrapperProps) {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>{children}</BrowserRouter>
-      </Provider>
-    );
-  }
+  const Wrapper = ({ children }: WrapperProps) => (
+    <Provider store={store}>
+      <BrowserRouter>{children}</BrowserRouter>
+    </Provider>
+  );
 
   return rtlRender(ui, { wrapper: Wrapper });
 }
