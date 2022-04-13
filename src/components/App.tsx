@@ -4,8 +4,8 @@ import useSession from 'hooks/useSession';
 
 import { Route, Routes } from 'react-router-dom';
 
-import routes, { routeType } from './routes/routes';
-import PrivateRoute from './routes/PrivateRoute';
+import routes, { routeType } from 'routes/routes';
+import PrivateRoute from 'routes/PrivateRoute';
 
 import 'scss/index.scss';
 

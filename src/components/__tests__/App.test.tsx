@@ -1,4 +1,4 @@
-import routes from 'components/routes/routes';
+import routes from 'routes/routes';
 import React from 'react';
 import { render, screen } from 'utils/tests/testingRender';
 

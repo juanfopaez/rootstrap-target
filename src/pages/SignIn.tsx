@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Navigate } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ import useStatus from 'hooks/useStatus';
 
 import { signIn } from 'state/actions/userActions';
 
-import routes from 'components/routes/routes';
+import routes from 'routes/routes';
 import PageWrapper from 'components/common/PageWrapper';
 import InfoSection from 'components/common/InfoSection';
 import InputField from 'components/common/InputField';
@@ -110,4 +110,4 @@ const SignIn = () => {
   );
 };
 
-export default memo(SignIn);
+export default SignIn;

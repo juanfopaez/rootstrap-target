@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 
 import useSession from 'hooks/useSession';
 
-import routes from 'components/routes/routes';
+import routes from 'routes/routes';
 import PageWrapper from 'components/common/PageWrapper';
 import InfoSection from 'components/common/InfoSection';
 

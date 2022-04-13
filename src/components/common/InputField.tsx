@@ -19,7 +19,7 @@ const InputField: React.FC<InputProps> = ({
       {label}
     </label>
     <input className={error ? 'error' : ''} {...props} {...register} />
-    {error ? <span>{error}</span> : <span> </span>}
+    {error ? <span>{error}</span> : <span />}
   </div>
 );
 
