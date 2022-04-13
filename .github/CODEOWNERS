@@ -1,1 +1,5 @@
-* @eitanlab @eitanlab @lucia-santos @juanfopaez
+# Default reviewers/codeowners for all code changes
+* @juanfopaez @bmarcio20 @lucia-santos @eitanlab
+
+# Reviewer by organization team 
+*.txt @rootstrap/react
