@@ -5,8 +5,7 @@ import { sessionState } from 'types/sessionTypes';
 const useSession = () =>
   useSelector(
     ({ session: { authenticated, user } }: { session: sessionState }) => ({
-      authenticated,
-      user
+      authenticated, user
     }),
     shallowEqual
   );
