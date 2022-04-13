@@ -1,5 +1,9 @@
 @import './scss/base/typography.scss';
 
+html, body, #root {
+  height: 100%;
+}
+
 body {
   @include font-style;
   margin: 0;
