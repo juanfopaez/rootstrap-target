@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { i6, play, appStore, social } from 'assets/images';
+import { i6, play, appStore, social } from 'assets';
 
 const InfoSection = () => (
   <div className="infoSection">

@@ -6,7 +6,7 @@ import { useSession } from 'hooks';
 
 import routes from 'routes/routes';
 
-import { PageWrapper, InfoSection } from 'components/common';
+import { PageWrapper, InfoSection } from 'components';
 
 const SignUp = () => {
   const { authenticated } = useSession();

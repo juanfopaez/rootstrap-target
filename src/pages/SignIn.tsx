@@ -10,14 +10,9 @@ import { signIn } from 'state/actions/userActions';
 
 import routes from 'routes/routes';
 
-import {
-  PageWrapper,
-  InfoSection,
-  InputField,
-  Button
-} from 'components/common';
+import { PageWrapper, InfoSection, InputField, Button } from 'components';
 
-import { smilies } from 'assets/images';
+import { smilies } from 'assets';
 
 import { actionStatus } from 'constants/actionStatusConstants';
 
