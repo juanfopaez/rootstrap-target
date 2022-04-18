@@ -1,11 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 
-import {
-  FULFILLED,
-  REJECTED,
-  PENDING,
-  RESET
-} from 'constants/actionStatusConstants';
+import { actionStatus } from 'constants/actionStatusConstants';
 
 const DELIMITER = '/';
 
@@ -18,25 +13,28 @@ const getActionKey = (type: any) => {
 export default createReducer({}, (builder) => {
   builder
     .addMatcher(
-      ({ type }) => type.endsWith(`/${REJECTED}`),
+      ({ type }) => type.endsWith(`/${actionStatus.REJECTED}`),
       (state: any, { type, error }) => {
-        state[getActionKey(type)] = { status: REJECTED, error: error.message };
+        state[getActionKey(type)] = {
+          status: actionStatus.REJECTED,
+          error: error.message
+        };
       }
     )
     .addMatcher(
-      ({ type }) => type.endsWith(`/${FULFILLED}`),
+      ({ type }) => type.endsWith(`/${actionStatus.FULFILLED}`),
       (state: any, { type }) => {
-        state[getActionKey(type)] = { status: FULFILLED };
+        state[getActionKey(type)] = { status: actionStatus.FULFILLED };
       }
     )
     .addMatcher(
-      ({ type }) => type.endsWith(`/${PENDING}`),
+      ({ type }) => type.endsWith(`/${actionStatus.PENDING}`),
       (state: any, { type }) => {
-        state[getActionKey(type)] = { status: PENDING };
+        state[getActionKey(type)] = { status: actionStatus.PENDING };
       }
     )
     .addMatcher(
-      ({ type }) => type.endsWith(`/${RESET}`),
+      ({ type }) => type.endsWith(`/${actionStatus.RESET}`),
       (state: any, { type }) => {
         delete state[getActionKey(type)];
         return state;

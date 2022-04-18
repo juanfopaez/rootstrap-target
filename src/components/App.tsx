@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useSession from 'hooks/useSession';
+import { useSession } from 'hooks';
 
 import { Route, Routes } from 'react-router-dom';
 

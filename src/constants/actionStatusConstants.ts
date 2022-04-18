@@ -1,4 +1,8 @@
-export const PENDING = 'pending';
-export const FULFILLED = 'fulfilled';
-export const REJECTED = 'rejected';
-export const RESET = 'reset';
+/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-shadow
+export enum actionStatus {
+  PENDING = 'pending',
+  FULFILLED = 'fulfilled',
+  REJECTED = 'rejected',
+  RESET = 'reset'
+}

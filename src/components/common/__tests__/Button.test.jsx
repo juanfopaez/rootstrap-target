@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from 'utils/tests/testingRender';
 
-import BlackButton from '../BlackButton';
+import Button from '../Button';
 
-describe('BlackButton.tsx Tests', () => {
+describe('Button.tsx Tests', () => {
   it('Should render BlackButton', () => {
-    render(<BlackButton type="button">Click me!</BlackButton>);
+    render(<Button type="button">Click me!</Button>);
     const button = screen.getByText('Click me!');
     expect(button).toBeInTheDocument();
   });

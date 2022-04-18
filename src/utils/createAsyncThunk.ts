@@ -5,7 +5,7 @@ import {
   AsyncThunkPayloadCreator
 } from '@reduxjs/toolkit';
 
-import { RESET } from 'constants/actionStatusConstants';
+import { actionStatus } from 'constants/actionStatusConstants';
 
 export default (
   type: string,
@@ -13,7 +13,6 @@ export default (
   options: AsyncThunkOptions<void, {}> | undefined
 ) => {
   const thunk = createAsyncThunk(type, payload, options);
-  /* tslint:disable-next-line */
   // @ts-ignore: Unreachable code error
-  thunk.reset = createAction(`${type}/${RESET}`);
+  thunk.reset = createAction(`${type}/${actionStatus.RESET}`);
 };

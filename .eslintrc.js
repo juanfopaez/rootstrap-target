@@ -35,6 +35,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'jsx-a11y/label-has-for': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
+    'import/prefer-default-export': 'off',
     'react/function-component-definition': [
       2,
       {

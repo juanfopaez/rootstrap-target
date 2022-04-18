@@ -7,6 +7,7 @@ const HomePage = () => {
   const onLogout = useDispatch(signOut);
   return (
     <div>
+      {/* TODO: ADD HOME SCREEN LOGIC */}
       Home
       <button onClick={() => onLogout({})} type="button">
         Logout

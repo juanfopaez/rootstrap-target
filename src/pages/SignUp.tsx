@@ -2,11 +2,11 @@ import React, { memo } from 'react';
 
 import { Navigate } from 'react-router-dom';
 
-import useSession from 'hooks/useSession';
+import { useSession } from 'hooks';
 
 import routes from 'routes/routes';
-import PageWrapper from 'components/common/PageWrapper';
-import InfoSection from 'components/common/InfoSection';
+
+import { PageWrapper, InfoSection } from 'components/common';
 
 const SignUp = () => {
   const { authenticated } = useSession();
@@ -17,12 +17,11 @@ const SignUp = () => {
 
   return (
     <PageWrapper>
-      <>
-        <div>TARGET MVD SignUp</div>
-        <div>
-          <InfoSection />
-        </div>
-      </>
+      {/* TODO: ADD SIGN UP SCREEN LOGIC */}
+      <div className="wrapper__left">TARGET MVD SignUp</div>
+      <div className="wrapper__right">
+        <InfoSection />
+      </div>
     </PageWrapper>
   );
 };

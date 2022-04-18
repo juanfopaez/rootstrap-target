@@ -2,16 +2,14 @@ import React from 'react';
 
 import { Navigate, useLocation } from 'react-router-dom';
 
-import { bool, node } from 'prop-types';
 import routes from './routes';
 
-const PrivateRoute = ({
-  children,
-  authenticated
-}: {
+interface Props {
   children: React.ReactElement;
   authenticated: boolean;
-}) => {
+}
+
+const PrivateRoute = ({ children, authenticated }: Props) => {
   const location = useLocation();
   return authenticated ? (
     children
@@ -24,11 +22,6 @@ const PrivateRoute = ({
       replace
     />
   );
-};
-
-PrivateRoute.propTypes = {
-  children: node.isRequired,
-  authenticated: bool.isRequired
 };
 
 export default PrivateRoute;
