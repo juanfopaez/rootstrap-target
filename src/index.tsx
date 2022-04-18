@@ -1,9 +1,12 @@
 import React from 'react';
+
 import * as ReactDOMClient from 'react-dom/client';
+
+import { BrowserRouter } from 'react-router-dom';
 
 import App from 'components/App';
 
-import './index.css';
+import './index.scss';
 
 import { Provider } from 'react-redux';
 import configureStore from 'state/store/configureStore';
@@ -25,11 +28,13 @@ const { persistor, store } = configureStore();
 applyDefaultInterceptors(store, httpClient);
 
 root.render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <App />
-    </PersistGate>
-  </Provider>
+  <BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
+  </BrowserRouter>
 );
 
 reportWebVitals();

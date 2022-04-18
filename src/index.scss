@@ -1,0 +1,14 @@
+@import './scss/base/typography.scss';
+
+html, body, #root {
+  height: 100vh;
+}
+
+body {
+  @include font-style;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+

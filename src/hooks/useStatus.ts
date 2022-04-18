@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 
 export default (action: any) =>
   useSelector(({ statusReducer }: any) => {
-    const { status, error } = statusReducer[action?.typePrefix] || {};
+    const { status, error } = statusReducer[action.typePrefix] || {};
     return {
       status,
       error

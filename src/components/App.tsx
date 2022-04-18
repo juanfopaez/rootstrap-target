@@ -1,51 +1,38 @@
 import React from 'react';
 
-import 'components/styles/App.css';
-import useSession from 'hooks/useSession';
+import { useSession } from 'hooks';
 
-import { signIn, signOut, signUp } from 'state/actions/userActions';
-import useDispatch from 'hooks/useDispatch';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
+import routes, { routeType } from 'routes/routes';
+import PrivateRoute from 'routes/PrivateRoute';
+
+import 'scss/index.scss';
+
+const App = () => {
   const { authenticated } = useSession();
-  const signOutRequest = useDispatch(signOut);
-  const signUpRequest = useDispatch(signUp);
-  const signInRequest = useDispatch(signIn);
 
   return (
-    <div className="App">
-      <button
-        type="button"
-        disabled={!authenticated}
-        onClick={() => {
-          signOutRequest({});
-        }}
-      >
-        Logout
-      </button>
-      <button
-        type="button"
-        disabled={authenticated}
-        onClick={() => {
-          signUpRequest({});
-        }}
-      >
-        SignUp
-      </button>
-      <button
-        type="button"
-        disabled={authenticated}
-        onClick={() => {
-          signInRequest({
-            user: { email: 'test@gmail.com', password: 'password' }
-          });
-        }}
-      >
-        SignIn
-      </button>
-      Rootstrap Target By Juan Forero
+    <div className="app">
+      <Routes>
+        {Object.values(routes).map((route: routeType) =>
+          route.private ? (
+            <Route
+              key={route.path}
+              {...route}
+              element={
+                <PrivateRoute authenticated={authenticated}>
+                  {route.element}
+                </PrivateRoute>
+              }
+            />
+          ) : (
+            <Route key={route.path} {...route} />
+          )
+        )}
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

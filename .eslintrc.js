@@ -31,6 +31,18 @@ module.exports = {
   rules: {
     // EsLint
     'no-param-reassign': [2, { props: false }],
+    'jsx-a11y/label-has-associated-control': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'jsx-a11y/label-has-for': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'import/prefer-default-export': 'off',
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function'
+      }
+    ],
     // Jest
     'jest/no-disabled-tests': 'warn',
     'jest/no-focused-tests': 'error',
