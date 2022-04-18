@@ -7,11 +7,19 @@
 import React from 'react';
 
 interface Props {
-  children: React.ReactElement | React.ReactElement[];
+  left: React.ReactElement | React.ReactElement[];
+  right?: React.ReactElement | React.ReactElement[];
 }
 
-const PageWrapper = ({ children }: Props) => (
-  <div className="wrapper">{children}</div>
+const PageWrapper = ({ left, right }: Props) => (
+  <div className="wrapper">
+    <div className="wrapper__left">{left}</div>
+    {right ? <div className="wrapper__right">{right}</div> : null}
+  </div>
 );
+
+PageWrapper.defaultProps = {
+  right: null
+};
 
 export default PageWrapper;

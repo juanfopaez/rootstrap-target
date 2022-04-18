@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Navigate } from 'react-router-dom';
 
@@ -14,16 +14,8 @@ const SignUp = () => {
   if (authenticated) {
     return <Navigate to={routes.index.path} />;
   }
-
-  return (
-    <PageWrapper>
-      {/* TODO: ADD SIGN UP SCREEN LOGIC */}
-      <div className="wrapper__left">TARGET MVD SignUp</div>
-      <div className="wrapper__right">
-        <InfoSection />
-      </div>
-    </PageWrapper>
-  );
+  /* TODO: ADD SIGN UP SCREEN LOGIC */
+  return <PageWrapper left={<>TARGET MVD SignUp</>} right={<InfoSection />} />;
 };
 
-export default memo(SignUp);
+export default SignUp;

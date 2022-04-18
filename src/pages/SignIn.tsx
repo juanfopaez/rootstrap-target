@@ -57,8 +57,8 @@ const SignIn = () => {
   };
 
   return (
-    <PageWrapper>
-      <div className="wrapper__left">
+    <PageWrapper
+      left={
         <div className="signInWrapper">
           <img src={smilies} alt="Target mvd logo" />
           <h2>Target mvd</h2>
@@ -102,11 +102,9 @@ const SignIn = () => {
             <a href="#">Sign Up</a>
           </div>
         </div>
-      </div>
-      <div className="wrapper__right">
-        <InfoSection />
-      </div>
-    </PageWrapper>
+      }
+      right={<InfoSection />}
+    />
   );
 };
 
