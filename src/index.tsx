@@ -1,6 +1,5 @@
 import React from 'react';
 
-// @ts-ignore
 import * as ReactDOMClient from 'react-dom/client';
 
 import { BrowserRouter } from 'react-router-dom';
