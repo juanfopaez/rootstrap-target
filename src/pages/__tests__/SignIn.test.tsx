@@ -11,7 +11,7 @@ jest.mock('services/userService');
 
 describe('SignIn.jsx Tests', () => {
   beforeEach(() => {
-    userService.signIn.mockResolvedValue({
+    (userService.signIn as jest.MockedFunction<any>).mockResolvedValue({
       data: {}
     });
   });
@@ -58,7 +58,7 @@ describe('SignIn.jsx Tests', () => {
   });
 
   it('Users should able to fill fields up and call sign-in end point and catch api errors', async () => {
-    userService.signIn.mockRejectedValue({
+    (userService.signIn as jest.MockedFunction<any>).mockRejectedValue({
       response: {
         data: {
           errors: ['hmmmm ops something went wrong']

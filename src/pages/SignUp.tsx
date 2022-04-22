@@ -82,10 +82,10 @@ const SignUp = () => {
             <InputField
               label="password"
               id="password"
-              placeholder="MIN. 6 CHARACTERS LONG"
+              placeholder="MIN. 8 CHARACTERS LONG"
               register={register('password', {
                 required: 'Your password is required',
-                minLength: { value: 6, message: 'Min. 6 characters long' }
+                minLength: { value: 8, message: 'Min. 8 characters long' }
               })}
               error={extractApiErrors({
                 apiErrors: error,
@@ -97,8 +97,10 @@ const SignUp = () => {
             <InputField
               label="confirm password"
               id="password_confirmation"
+              placeholder="MIN. 8 CHARACTERS LONG"
               register={register('password_confirmation', {
                 required: 'Your password confirmation is required',
+                minLength: { value: 8, message: 'Min. 8 characters long' },
                 validate: (value) =>
                   value === passwordCurrentValue || 'The passwords do not match'
               })}
@@ -122,7 +124,11 @@ const SignUp = () => {
                 SELECT YOUR GENDER
               </option>
               {Object.values(genders).map((gender) => (
-                <option key={gender.value} value={gender.value}>
+                <option
+                  key={gender.value}
+                  value={gender.value}
+                  data-testid="select-gender"
+                >
                   {gender.text}
                 </option>
               ))}
