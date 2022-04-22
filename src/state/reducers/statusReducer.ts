@@ -17,7 +17,7 @@ export default createReducer({}, (builder) => {
       (state: any, action: any) => {
         state[getActionKey(action.type)] = {
           status: actionStatus.REJECTED,
-          error: action.payload.errors || {}
+          error: action.payload
         };
       }
     )

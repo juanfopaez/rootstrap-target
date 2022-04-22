@@ -8,10 +8,10 @@ type FieldErrors<TFieldValues extends FieldValues = FieldValues> = DeepMap<
 
 const extractApiErrors = ({
   apiErrors,
-  formErrors,
+  formErrors = {},
   errorToExtract = ''
 }: {
-  formErrors: FieldErrors;
+  formErrors?: FieldErrors;
   apiErrors: { [key: string]: string[] };
   errorToExtract?: string;
 }) => {

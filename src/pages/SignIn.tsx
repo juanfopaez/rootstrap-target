@@ -65,11 +65,14 @@ const SignIn = () => {
                   message: 'Entered value does not match email format'
                 }
               })}
-              error={extractApiErrors({
-                apiErrors: error,
-                formErrors: errors,
-                errorToExtract: 'email'
-              })}
+              error={
+                extractApiErrors({ apiErrors: error }) ||
+                extractApiErrors({
+                  apiErrors: error,
+                  formErrors: errors,
+                  errorToExtract: 'email'
+                })
+              }
               type="email"
             />
             <InputField

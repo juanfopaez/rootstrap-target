@@ -61,9 +61,7 @@ describe('SignIn.jsx Tests', () => {
     userService.signIn.mockRejectedValue({
       response: {
         data: {
-          errors: {
-            email: ['hmmmm ops something went wrong']
-          }
+          errors: ['hmmmm ops something went wrong']
         }
       }
     });

@@ -105,7 +105,7 @@ const SignUp = () => {
               error={extractApiErrors({
                 apiErrors: error,
                 formErrors: errors,
-                errorToExtract: 'password'
+                errorToExtract: 'password_confirmation'
               })}
               type="password"
             />
