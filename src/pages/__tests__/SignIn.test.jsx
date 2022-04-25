@@ -9,7 +9,7 @@ import userService from 'services/userService';
 
 jest.mock('services/userService');
 
-describe('SignIn.jsx Tests', () => {
+describe('SignIn.tsx Tests', () => {
   beforeEach(() => {
     userService.signIn.mockResolvedValue({
       data: {}

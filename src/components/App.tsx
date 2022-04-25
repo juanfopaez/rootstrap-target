@@ -9,11 +9,14 @@ import PrivateRoute from 'routes/PrivateRoute';
 
 import 'scss/index.scss';
 
+import { Header } from 'components';
+
 const App = () => {
   const { authenticated } = useSession();
 
   return (
     <div className="app">
+      <Header />
       <Routes>
         {Object.values(routes).map((route: routeType) =>
           route.private ? (

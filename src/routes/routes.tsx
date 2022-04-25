@@ -1,9 +1,6 @@
 import React from 'react';
 
-import HomePage from 'pages/Home';
-import SignIn from 'pages/SignIn';
-import SignUp from 'pages/SignUp';
-import NotFound from 'pages/NotFound';
+import { Home, SignIn, SignUp, NotFound, About, Contact } from 'pages';
 
 export interface routeType {
   path: string;
@@ -18,7 +15,7 @@ export interface routeElementType {
 const routes: routeElementType = {
   index: {
     path: '/',
-    element: <HomePage />,
+    element: <Home />,
     private: true
   },
   signIn: {
@@ -28,6 +25,14 @@ const routes: routeElementType = {
   signUp: {
     path: '/register',
     element: <SignUp />
+  },
+  about: {
+    path: '/about',
+    element: <About />
+  },
+  contact: {
+    path: '/contact',
+    element: <Contact />
   },
   notFound: {
     path: '*',
