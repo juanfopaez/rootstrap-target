@@ -123,13 +123,9 @@ const SignUp = () => {
               <option value="" disabled>
                 SELECT YOUR GENDER
               </option>
-              {Object.values(genders).map((gender) => (
-                <option
-                  key={gender.value}
-                  value={gender.value}
-                  data-testid="select-gender"
-                >
-                  {gender.text}
+              {Object.values(genders).map(({ value, text }) => (
+                <option key={value} value={value} data-testid="select-gender">
+                  {text}
                 </option>
               ))}
             </SelectField>
