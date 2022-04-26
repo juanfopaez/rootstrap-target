@@ -10,15 +10,15 @@ import initialState from 'mocks/initialState';
 describe('About.tsx Tests', () => {
   it('Render about page if user uses /about as path', () => {
     render(<App />, { route: routes.about.path, initialState: {} });
-    const linkElement = screen.getByText(/What's TARGET/);
-    expect(linkElement).toBeInTheDocument();
+    const title = screen.getByText(/What's TARGET/);
+    expect(title).toBeInTheDocument();
   });
 
   it('Should redirect to sign-in if user is not authenticated and do click on get started button', () => {
     render(<App />, { route: routes.about.path, initialState: {} });
-    const linkElement = screen.getByText(/What's TARGET/);
+    const title = screen.getByText(/What's TARGET/);
 
-    expect(linkElement).toBeInTheDocument();
+    expect(title).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('Get started!'));
 
@@ -30,9 +30,9 @@ describe('About.tsx Tests', () => {
       route: routes.about.path,
       initialState: { ...initialState }
     });
-    const linkElement = screen.getByText(/What's TARGET/);
+    const title = screen.getByText(/What's TARGET/);
 
-    expect(linkElement).toBeInTheDocument();
+    expect(title).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('Get started!'));
 

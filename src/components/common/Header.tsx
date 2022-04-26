@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { menu, close } from 'assets';
-
 import routes from 'routes/routes';
 
 const Header = () => {
-  const Options = [
+  const options = [
     {
       title: 'About',
       path: routes.about.path
@@ -31,19 +30,19 @@ const Header = () => {
       <button type="button" onClick={onOptionsOpen}>
         <img
           src={optionsOpen ? close : menu}
-          alt={optionsOpen ? 'close' : 'menu'}
+          alt={optionsOpen ? 'close menu' : 'open menu'}
         />
       </button>
       {optionsOpen && (
         <ul>
-          {Options.map((option) => (
-            <li key={option.path}>
+          {options.map(({ path, title }) => (
+            <li key={path}>
               <Link
-                to={option.path}
+                to={path}
                 onClick={() => setOptionsOpen(false)}
-                className={location.pathname === option.path ? 'selected' : ''}
+                className={location.pathname === path ? 'selected' : ''}
               >
-                {option.title}
+                {title}
               </Link>
             </li>
           ))}

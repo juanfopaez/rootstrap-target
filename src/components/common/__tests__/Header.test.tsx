@@ -9,13 +9,13 @@ import Header from '../Header';
 describe('Header.tsx Tests', () => {
   it('Should render header', () => {
     render(<Header />);
-    const MenuIcon = screen.getByAltText('menu');
+    const MenuIcon = screen.getByAltText('open menu');
     expect(MenuIcon).toBeInTheDocument();
   });
 
   it('Should show options when users do click and redirect to about', async () => {
     render(<Header />);
-    const MenuIcon = screen.getByAltText('menu');
+    const MenuIcon = screen.getByAltText('open menu');
     fireEvent.click(MenuIcon);
 
     await waitFor(() => {
@@ -29,7 +29,7 @@ describe('Header.tsx Tests', () => {
 
   it('Should show options when users do click and redirect to contact', async () => {
     render(<Header />);
-    const MenuIcon = screen.getByAltText('menu');
+    const MenuIcon = screen.getByAltText('open menu');
     fireEvent.click(MenuIcon);
 
     await waitFor(() => {
