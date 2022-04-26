@@ -33,3 +33,11 @@ export interface signInFields {
   email: string;
   password: string;
 }
+
+export interface signUpFields {
+  username: string;
+  email: string;
+  gender: string;
+  password: string;
+  password_confirmation: string;
+}

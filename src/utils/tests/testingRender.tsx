@@ -9,7 +9,10 @@ interface WrapperProps {
   children: React.ReactNode;
 }
 
-function render(ui: any, { route = '/', initialState = {} } = {}) {
+function render(
+  ui: React.ReactElement,
+  { route = '/', initialState = {} } = {}
+) {
   window.history.pushState({}, 'Test page', route);
   const store = configureStore({
     reducer: rootReducer,

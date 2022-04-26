@@ -1,7 +1,7 @@
 @import '../base/variables.scss';
 @import '../base//mixins.scss';
 
-.signInWrapper { 
+.formWrapper { 
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -50,17 +50,11 @@
         }
     }
 
-    &__navigation{
+
+    &__navigation_signin{
         display: flex;
         flex-direction: column;
-        a {
-            text-decoration: none;
-            font-size: 0.688rem;
-            font-weight: 600;
-            &:visited{
-                color: $black;
-            }
-
+        button {
             &:nth-child(1){
                 margin: 1rem 0;
             }
@@ -72,6 +66,22 @@
                 text-transform: uppercase;
             }
             &:nth-child(4){
+                text-transform: uppercase;
+            }
+        }
+        hr{
+            margin: 1rem 0;
+            width: 100%;
+        }
+    }
+
+    &__navigation_signup{
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        button {
+            &:nth-child(2){
+                margin: 0.5rem 0;
                 text-transform: uppercase;
             }
         }

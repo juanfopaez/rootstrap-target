@@ -5,12 +5,12 @@
 @import './components/common/PageWrapper.scss';
 @import './components/common/InfoSection.scss';
 @import './components/common/InputField.scss';
-@import './components/common/BlackButton.scss';
+@import './components/common/Button.scss';
+@import './components/common/SelectField.scss';
 @import './components/common/Header.scss';
 
 // Pages 
-@import './pages/SignIn.scss';
-@import './pages/About.scss';
+@import './pages/Authentication.scss';
 
 // Variables
 @import './base/variables.scss';

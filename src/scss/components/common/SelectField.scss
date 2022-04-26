@@ -1,7 +1,7 @@
 @import '../../base/variables.scss';
 @import '../../base/typography.scss';
 
-.inputWrapper {
+.selectWrapper {
     display: flex;
     flex-direction: column;
     label {
@@ -16,8 +16,11 @@
         color: $error;
       }
     };
-    input {
+    select {
       @include font-style;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
       letter-spacing: 0.075rem;
       padding: 0.75rem 1.25rem;
       margin: 0.5rem 0 0 0;
@@ -31,10 +34,6 @@
       &:focus {
         outline-style: none;
         box-shadow: none;
-      }
-
-      &__center {
-        text-align: center;
       }
     }
     span {
