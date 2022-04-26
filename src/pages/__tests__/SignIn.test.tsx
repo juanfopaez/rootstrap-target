@@ -11,12 +11,15 @@ jest.mock('services/userService');
 
 describe('SignIn.jsx Tests', () => {
   beforeEach(() => {
-    userService.signIn.mockResolvedValue({
+    (userService.signIn as jest.MockedFunction<any>).mockResolvedValue({
       data: {}
     });
   });
   it('Render sign-in page if user uses /login as path', () => {
-    render(<App />, { route: routes.signIn.path, initialState: {} });
+    render(<App />, {
+      route: routes.signIn.path,
+      initialState: {}
+    });
     const linkElement = screen.getByText(/Target mvd/);
     expect(linkElement).toBeInTheDocument();
   });
@@ -55,8 +58,12 @@ describe('SignIn.jsx Tests', () => {
   });
 
   it('Users should able to fill fields up and call sign-in end point and catch api errors', async () => {
-    userService.signIn.mockRejectedValue({
-      response: { data: { errors: ['hmmmm ops something went wrong'] } }
+    (userService.signIn as jest.MockedFunction<any>).mockRejectedValue({
+      response: {
+        data: {
+          errors: ['hmmmm ops something went wrong']
+        }
+      }
     });
     render(<App />, { route: routes.signIn.path, initialState: {} });
     screen.getByText(/Target mvd/);

@@ -25,3 +25,18 @@
         cursor: not-allowed;
     }
 }
+
+.inlineButton {
+    @include font-style;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.688rem;
+    font-weight: 600;
+    padding: 0;
+
+    &:disabled{
+        color: $focusedBlack;
+        cursor: not-allowed;
+    }
+}

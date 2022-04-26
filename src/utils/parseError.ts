@@ -1,3 +1,9 @@
+export interface errorsApiType {
+  fullMessages: Array<string>;
+  errors: Array<string>;
+  base: Array<string>;
+}
+
 const parseErrors = (errors: any) => {
   if (errors) {
     const { fullMessages, base } = errors;
@@ -15,9 +21,7 @@ const parseErrors = (errors: any) => {
     if (Array.isArray(errors)) {
       return errors[0];
     }
-    const errorKey = Object.keys(errors)[0];
-    const error = errors[errorKey][0];
-    return `${errorKey} ${error}`;
+    return errors;
   }
   return 'Something went wrong';
 };
