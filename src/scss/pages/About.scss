@@ -1,0 +1,21 @@
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+
+.aboutWrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    justify-content: center;
+    margin: auto 5.063rem;
+
+    h2 {
+        font-size: 1.125rem;
+    }
+
+    p {
+        text-align: justify;
+        margin-bottom: 2rem;
+        font-size: 0.875rem;
+    }
+}
