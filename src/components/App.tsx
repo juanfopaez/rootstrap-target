@@ -13,7 +13,6 @@ import { Header } from 'components';
 
 const App = () => {
   const { authenticated } = useSession();
-
   return (
     <div className="app">
       <Header />

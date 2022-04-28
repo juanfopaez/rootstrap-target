@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 
 import { menu, close } from 'assets';
 import routes from 'routes/routes';
+import assertIsNode from 'utils/assertIsNode';
+import { Contact } from 'pages';
+import Modal from './Modal';
 
 const Header = () => {
-  const options = [
-    {
-      title: 'About',
-      path: routes.about.path
-    },
-    {
-      title: 'Contact',
-      path: routes.contact.path
-    }
-  ];
-
   const [optionsOpen, setOptionsOpen] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   const location = useLocation();
 
@@ -25,30 +18,69 @@ const Header = () => {
     setOptionsOpen((prevState) => !prevState);
   };
 
+  const onShowModal = () => {
+    setShowModal(true);
+    setOptionsOpen(false);
+  };
+
+  const useOutside = (ref: React.RefObject<HTMLDivElement>) => {
+    useEffect(() => {
+      const handleClickOutside = ({ target }: MouseEvent) => {
+        assertIsNode(target);
+        if (
+          ref.current &&
+          !ref.current.contains(target as Node) &&
+          optionsOpen
+        ) {
+          setOptionsOpen(false);
+        }
+      };
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [ref, optionsOpen]);
+  };
+
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useOutside(wrapperRef);
+
   return (
-    <header className="headerWrapper">
-      <button type="button" onClick={onOptionsOpen}>
-        <img
-          src={optionsOpen ? close : menu}
-          alt={optionsOpen ? 'close menu' : 'open menu'}
-        />
-      </button>
-      {optionsOpen && (
-        <ul>
-          {options.map(({ path, title }) => (
-            <li key={path}>
+    <>
+      <header ref={wrapperRef} className="headerWrapper">
+        <button type="button" onClick={onOptionsOpen}>
+          <img
+            src={optionsOpen ? close : menu}
+            alt={optionsOpen ? 'close menu' : 'open menu'}
+          />
+        </button>
+        {optionsOpen && (
+          <ul>
+            <li>
               <Link
-                to={path}
+                to={routes.about.path}
                 onClick={() => setOptionsOpen(false)}
-                className={location.pathname === path ? 'selected' : ''}
+                className={
+                  location.pathname === routes.about.path ? 'selected' : ''
+                }
               >
-                {title}
+                About
               </Link>
             </li>
-          ))}
-        </ul>
+            <li>
+              <button type="button" onClick={onShowModal}>
+                Contact
+              </button>
+            </li>
+          </ul>
+        )}
+      </header>
+      {showModal && (
+        <Modal setShowModal={setShowModal}>
+          <Contact />
+        </Modal>
       )}
-    </header>
+    </>
   );
 };
 

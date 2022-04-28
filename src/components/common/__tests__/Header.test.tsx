@@ -27,7 +27,7 @@ describe('Header.tsx Tests', () => {
     expect(window.location.pathname).toBe(routes.about.path);
   });
 
-  it('Should show options when users do click and redirect to contact', async () => {
+  it('Should show options when users do click and close menu when user select any option', async () => {
     render(<Header />);
     const MenuIcon = screen.getByAltText('open menu');
     fireEvent.click(MenuIcon);
@@ -38,6 +38,8 @@ describe('Header.tsx Tests', () => {
     });
 
     fireEvent.click(screen.getByText('Contact'));
-    expect(window.location.pathname).toBe(routes.contact.path);
+
+    expect(screen.queryByText('About')).not.toBeInTheDocument();
+    expect(screen.queryByText('Contact')).not.toBeInTheDocument();
   });
 });

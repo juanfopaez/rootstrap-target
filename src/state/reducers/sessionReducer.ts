@@ -37,7 +37,7 @@ export const sessionSlice = createSlice({
     [signInFulfilled.toString()]: fulfilledReducer,
     [signUpFulfilled.toString()]: fulfilledReducer,
     [signOut.toString()]: () => initialState,
-    [updateSession.toString()]: (state: sessionState, { payload }: any) => {
+    [updateSession.toString()]: (state: sessionState, { payload }) => {
       state.info = payload;
       state.authenticated = true;
     }

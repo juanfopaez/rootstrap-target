@@ -16,7 +16,7 @@
         color: $error;
       }
     };
-    input {
+    input, textarea {
       @include font-style;
       letter-spacing: 0.075rem;
       padding: 0.75rem 1.25rem;
@@ -37,6 +37,11 @@
         text-align: center;
       }
     }
+
+    textarea{
+      resize: none;
+    }
+
     span {
       text-align: center;
       font-size: 0.688rem;
