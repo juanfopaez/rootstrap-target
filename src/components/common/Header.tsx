@@ -10,7 +10,7 @@ import Modal from './Modal';
 
 const Header = () => {
   const [optionsOpen, setOptionsOpen] = useState(false);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const location = useLocation();
 

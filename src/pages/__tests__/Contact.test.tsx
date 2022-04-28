@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Contact from 'pages/Contact';
-
 import { render, screen } from 'utils/tests/testingRender';
+
+import Contact from '../Contact';
 
 describe('Contact.tsx Tests', () => {
   it('Render contact', () => {

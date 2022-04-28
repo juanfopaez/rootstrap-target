@@ -9,7 +9,7 @@ import PrivateRoute from 'routes/PrivateRoute';
 
 import 'scss/index.scss';
 
-import { Header } from 'components';
+import { Header } from 'components/common';
 
 const App = () => {
   const { authenticated } = useSession();

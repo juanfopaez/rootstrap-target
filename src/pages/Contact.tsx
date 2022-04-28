@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import TextAreaField from 'components/common/TextAreaField';
-import { Button, InputField } from 'components';
+import { Button, InputField, TextAreaField } from 'components/common';
 
 import { contactFields } from 'types/contactTypes';
 import { nosmilies, smilies } from 'assets';
