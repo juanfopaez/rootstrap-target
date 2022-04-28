@@ -3,7 +3,7 @@ import React from 'react';
 import { useSession } from 'hooks';
 import { useNavigate } from 'react-router-dom';
 
-import { Button, InfoSection, PageWrapper } from 'components';
+import { Button, InfoSection, PageWrapper } from 'components/common';
 
 import { smilies } from 'assets';
 import routes from 'routes/routes';

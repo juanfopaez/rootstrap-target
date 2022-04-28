@@ -8,7 +8,12 @@ import { signIn } from 'state/actions/userActions';
 
 import routes from 'routes/routes';
 
-import { PageWrapper, InfoSection, InputField, Button } from 'components';
+import {
+  PageWrapper,
+  InfoSection,
+  InputField,
+  Button
+} from 'components/common';
 
 import { smilies } from 'assets';
 

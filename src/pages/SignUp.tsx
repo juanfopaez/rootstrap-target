@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { PageWrapper, InfoSection, InputField, Button } from 'components';
+import {
+  PageWrapper,
+  InfoSection,
+  InputField,
+  Button
+} from 'components/common';
 
 import { Navigate, useNavigate } from 'react-router-dom';
 import { SubmitHandler, useForm } from 'react-hook-form';

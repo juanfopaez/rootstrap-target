@@ -1,12 +1,12 @@
 import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
-import { infoType } from 'types/sessionTypes';
+import { infoType, signInFields, signUpFields } from 'types/sessionTypes';
 import userService from 'services/userService';
 
 import parseError from 'utils/parseError';
 
 export const signIn = createAsyncThunk(
   'user/login',
-  async (userInput, { rejectWithValue }) => {
+  async (userInput: signInFields, { rejectWithValue }) => {
     try {
       const { data } = await userService.signIn(userInput);
       return data;
@@ -18,7 +18,7 @@ export const signIn = createAsyncThunk(
 
 export const signUp = createAsyncThunk(
   'user/register',
-  async (userInput, { rejectWithValue }) => {
+  async (userInput: signUpFields, { rejectWithValue }) => {
     try {
       const { data } = await userService.signUp(userInput);
       return data;

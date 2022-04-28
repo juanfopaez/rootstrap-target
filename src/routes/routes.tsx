@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Home, SignIn, SignUp, NotFound, About, Contact } from 'pages';
+import { Home, SignIn, SignUp, NotFound, About } from 'pages';
 
 export interface routeType {
   path: string;
@@ -29,10 +29,6 @@ const routes: routeElementType = {
   about: {
     path: '/about',
     element: <About />
-  },
-  contact: {
-    path: '/contact',
-    element: <Contact />
   },
   notFound: {
     path: '*',

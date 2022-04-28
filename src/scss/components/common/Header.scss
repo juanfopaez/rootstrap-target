@@ -15,13 +15,14 @@
     ul {
         margin: 0;
         list-style-type: none;
-        padding: 0 0 0 0.5rem;
-        li {
+        padding: 0 0 0 1rem;
+        li, button{
             cursor: pointer;
             line-height: 1rem;
-            margin-bottom: 0.4rem;
-            text-transform: uppercase;
             font-size: 0.875rem;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+            padding: 0;
 
             a {
                 text-decoration: none;
@@ -31,6 +32,10 @@
                 &.selected {
                     font-weight: bold;
                 }
+            }
+
+            button {
+                letter-spacing: 0.15rem;
             }
         }
     }
