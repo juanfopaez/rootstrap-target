@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
-
 import { menu, close } from 'assets';
+import { Contact } from 'pages';
+
 import routes from 'routes/routes';
 import assertIsNode from 'utils/assertIsNode';
-import { Contact } from 'pages';
 import Modal from './Modal';
 
 const Header = () => {

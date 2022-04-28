@@ -9,7 +9,8 @@ import { nosmilies, smilies } from 'assets';
 import questionService from 'services/questionService';
 
 const Contact = () => {
-  const [formSubmitAttempted, setFormSubmitAttempted] = useState(false);
+  const [formSubmitAttempted, setFormSubmitAttempted] =
+    useState<boolean>(false);
   const [formSent, setFormSent] = useState<boolean>();
 
   const {
